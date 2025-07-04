@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -24,6 +24,31 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import branch from 'react-native-branch';
+
+branch.subscribe({
+  onOpenStart: ({uri, cachedInitialEvent}) => {
+    console.log(
+      'subscribe onOpenStart, will open ' +
+        uri +
+        ' cachedInitialEvent is ' +
+        cachedInitialEvent,
+    );
+  },
+  onOpenComplete: ({error, params, uri}) => {
+    if (error) {
+      console.error(
+        'subscribe onOpenComplete, Error from opening uri: ' +
+          uri +
+          ' error: ' +
+          error,
+      );
+      return;
+    } else if (params) {
+      console.log('subscribe onOpenComplete, params: ', params);
+    }
+  },
+});
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -57,6 +82,12 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    branch.getLatestReferringParams().then(latestParams => {
+      console.log('latestParams:', latestParams);
+    });
+  }, []);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,

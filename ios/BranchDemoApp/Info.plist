@@ -20,6 +20,19 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>$(APPLICATION_ID)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>matera-development</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -47,5 +60,19 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>branch_key</key>
+	<dict>
+		<key>live</key>
+		<string>key_live_prxnvgRj87iEcn0QPPHCNhahEFbl5zvy</string>
+		<key>test</key>
+		<string>key_test_hyDaAnNjWWhvam1KHIVCUglnAqap4wzn</string>
+	</dict>
+	<key>branch_universal_link_domains</key>
+	<array>
+		<string>fhfyd.test-app.link</string>
+		<string>fhfyd-alternate.test-app.link</string>
+		<string>fhfyd.app.link</string>
+		<string>fhfyd-alternate.app.link</string>
+	</array>
 </dict>
 </plist>

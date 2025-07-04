@@ -4,6 +4,8 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+import io.branch.rnbranch.*
+import android.content.Intent
 
 class MainActivity : ReactActivity() {
 
@@ -19,4 +21,15 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+
+  override fun onStart() {
+      super.onStart()
+      RNBranchModule.initSession(getIntent().getData(), this)
+  }
+
+  override fun onNewIntent(intent: Intent?) {
+      super.onNewIntent(intent)
+      setIntent(intent)
+      RNBranchModule.reInitSession(this)
+  }
 }

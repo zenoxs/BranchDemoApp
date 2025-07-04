@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-BranchDemoApp-BranchDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-BranchDemoApp-BranchDemoAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		AA5109C72E180BA5002EE1E0 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = AA5109C62E180B9F002EE1E0 /* branch.json */; };
 		AB6B4B833FF76DCA306E0F60 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F81F1CC4504EC43E2B11FA59 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +46,10 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-BranchDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BranchDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BranchDemoApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-BranchDemoApp-BranchDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BranchDemoApp-BranchDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-BranchDemoApp-BranchDemoAppTests/Pods-BranchDemoApp-BranchDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA5109C52E180A86002EE1E0 /* BranchDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BranchDemoApp.entitlements; path = BranchDemoApp/BranchDemoApp.entitlements; sourceTree = "<group>"; };
+		AA5109C62E180B9F002EE1E0 /* branch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = branch.json; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F81F1CC4504EC43E2B11FA59 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = BranchDemoApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F81F1CC4504EC43E2B11FA59 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = BranchDemoApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 		13B07FAE1A68108700A75B9A /* BranchDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA5109C62E180B9F002EE1E0 /* branch.json */,
+				AA5109C52E180A86002EE1E0 /* BranchDemoApp.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -247,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				AA5109C72E180BA5002EE1E0 /* branch.json in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				AB6B4B833FF76DCA306E0F60 /* PrivacyInfo.xcprivacy in Resources */,
 			);
@@ -471,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BranchDemoApp/BranchDemoApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V36WYR297;
 				ENABLE_BITCODE = NO;
@@ -499,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BranchDemoApp/BranchDemoApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V36WYR297;
 				INFOPLIST_FILE = BranchDemoApp/Info.plist;
