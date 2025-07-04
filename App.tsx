@@ -26,29 +26,31 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import branch from 'react-native-branch';
 
-branch.subscribe({
-  onOpenStart: ({uri, cachedInitialEvent}) => {
-    console.log(
-      'subscribe onOpenStart, will open ' +
-        uri +
-        ' cachedInitialEvent is ' +
-        cachedInitialEvent,
-    );
-  },
-  onOpenComplete: ({error, params, uri}) => {
-    if (error) {
-      console.error(
-        'subscribe onOpenComplete, Error from opening uri: ' +
-          uri +
-          ' error: ' +
-          error,
-      );
-      return;
-    } else if (params) {
-      console.log('subscribe onOpenComplete, params: ', params);
-    }
-  },
-});
+// NOTE: if the branch.subscribe is not called before using branch.getLatestReferringParams,
+// the params will be null on the first call to getLatestReferringParams
+// branch.subscribe({
+//   onOpenStart: ({uri, cachedInitialEvent}) => {
+//     console.log(
+//       'subscribe onOpenStart, will open ' +
+//         uri +
+//         ' cachedInitialEvent is ' +
+//         cachedInitialEvent,
+//     );
+//   },
+//   onOpenComplete: ({error, params, uri}) => {
+//     if (error) {
+//       console.error(
+//         'subscribe onOpenComplete, Error from opening uri: ' +
+//           uri +
+//           ' error: ' +
+//           error,
+//       );
+//       return;
+//     } else if (params) {
+//       console.log('subscribe onOpenComplete, params: ', params);
+//     }
+//   },
+// });
 
 type SectionProps = PropsWithChildren<{
   title: string;
