@@ -76,7 +76,7 @@ android {
 
     namespace "com.branchdemoapp"
     defaultConfig {
-        applicationId "com.branchdemoapp"
+        applicationId "eu.matera.development.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
